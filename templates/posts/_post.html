@@ -1,0 +1,7 @@
+<div class="post" id="object_{{ object.id }}">
+<h3 id="post_title"><a href="/posts/{{ object.slug}}">{{ object.title }}</a></h3>
+<div id="post_date">{{ object.pub_date|timesince }} ago</div>
+   
+    {{ object.body|safe }}
+
+</div>

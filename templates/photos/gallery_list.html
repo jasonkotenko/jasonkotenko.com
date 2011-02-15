@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load util_tags %}
+
+{% block content %}
+
+<div id="galleries">
+<ul id="gallery_list">
+{% for gallery in galleries %}
+  <li>
+    <p><strong><a href="/gallery/{{ gallery.name }}">{{ gallery.name }}</a></strong><br />
+    {{ gallery.description }}</p>
+  </li>
+{% endfor %}
+</ul>
+</div>
+
+
+{% endblock %}

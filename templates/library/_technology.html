@@ -1,0 +1,10 @@
+{% extends 'library/_resource.html' %}
+
+{% block moretext %}
+<h3>Related:</h3>
+<ul>
+	{% for article in resource.articles.all %}
+	<li><a href="/articles/{{ article.slug }}">{{ article.name }}</a></li>
+	{% endfor %}
+</ul>
+{% endblock %}

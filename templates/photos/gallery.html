@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<link rel="stylesheet" type="text/css" media="all" href="/media/css/jquery.ad-gallery.css" />
+<script type="text/javascript" src="/media/js/jquery.js"></script>
+<script type="text/javascript" src="/media/js/jquery.ad-gallery.pack.js"></script>
+
+<script type="text/javascript"> 
+  $(function() {
+    var galleries = $('.ad-gallery').adGallery();
+    galleries[0].settings.effect = "fade";
+    $('.ad-loader').attr("src", "/media/images/gallery/loader.gif");
+  });
+  </script> 
+{% endblock %}
+
+{% load util_tags %}
+
+{% block content %}
+<div id="container">
+<div id="gallery" class="ad-gallery">
+  <div class="ad-image-wrapper"> 
+  </div> 
+  <div class="ad-controls"> 
+  </div> 
+  <div class="ad-nav"> 
+    <div class="ad-thumbs"> 
+      <ul class="ad-thumb-list">
+        {% for photo in gallery.photo_set.all %}
+        <li>
+          <a href="{{ photo.image.url }}">
+            <img src="{{ photo.image|thumbnail }}" title="{{ photo.title }}" alt="{{ photo.description }}" class="image{{ forloop.counter0 }}">
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}

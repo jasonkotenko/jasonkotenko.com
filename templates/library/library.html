@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block header %}
+    <link rel="stylesheet" type="text/css" media="all" href="/media/css/library.css" />
+{% endblock %}
+
+{% block content %}
+{{ library.introduction|safe }}
+{% if library.books.count != 0 %}
+	<h2>Books</h2>
+	{% for resource in library.books.all %}
+		{% include 'library/_book.html' %}
+	{% endfor %}
+{% endif %}
+{% if library.articles.count != 0 %}
+	<h2>Articles</h2>
+	{% for resource in library.articles.all %}
+		{% include 'library/_article.html' %}
+	{% endfor %}
+{% endif %}
+{% if library.technologies.count != 0 %}
+	<h2>Technologies</h2>
+	{% for resource in library.technologies.all %}
+		{% include 'library/_technology.html' %}
+	{% endfor %}
+{% endif %}
+{% endblock %}

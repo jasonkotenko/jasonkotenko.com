@@ -1,0 +1,23 @@
+.resource_thumb {
+	float: left;
+	width: 50px;
+	margin-right: 20px;
+}
+
+.resource_text {
+	float: right;
+	width: 570px;
+}
+
+.resource_link {
+	float: left;
+}
+
+.resource_hr {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.clear {
+	clear: both;
+}

@@ -1,0 +1,24 @@
+h1 a {
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+div#top_spacer {
+    height: 50px;
+}
+
+
+ul#menu {
+    list-style-type: none;
+    padding-left: 60px;
+}
+
+ul#menu li {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+

@@ -1,0 +1,12 @@
+<hr class="resource_hr"/>
+
+<div class="resource" id="resource_{{ resource.id }}">
+	<div class="resource_thumb"><img src="/media/{{ resource.thumbnail }}"></img></div>
+	<div class="resource_text">
+		<h3 class="resource_title">{{ resource.title }}</h3>
+		<div class="resource_descr">{{ resource.description }}</div>
+		{% block moretext %}{% endblock %}
+	</div>
+	<div class="resource_link"><a href="{{ resource.URL }}">Link</a></div>
+	<div class="clear"></div>
+</div>
