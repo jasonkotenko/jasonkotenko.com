@@ -1,1 +1,11 @@
-404
+{% extends 'base.html' %}
+{% block header %}
+    <link rel="stylesheet" type="text/css" media="all" href="media/css/post.css" />
+{% endblock %}
+
+{% block content %}
+<div class="post">
+<h3 id="post_title">404 - Page Not Found</h3>
+<p>Sorry, looks like you typed something wrong, or I typed something wrong, or gnomes have invaded the Internet and have redirected your request to an invalid page.  In any case, use the navigation on the left or hit your browser's Back button to get back to something useful.</p>
+</div>
+{% endblock %}

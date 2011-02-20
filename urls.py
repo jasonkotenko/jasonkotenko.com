@@ -11,14 +11,14 @@ queryset = {'queryset': Post.objects.all()}
 urlpatterns = patterns('',
     # Example:
     #(r'^$', 'django.views.generic.list_detail.object_list', queryset),
-    (r'^$', 'jasonkotenko.posts.views.latest'),
-    (r'^tinymce/', include('tinymce.urls')),
-    (r'^posts/feed/$', PostFeed()),
-    (r'^posts/(?P<req_name>.*)/$', 'jasonkotenko.posts.views.post'),
-    (r'^articles/(?P<req_name>.*)/$', 'jasonkotenko.articles.views.article'),
-    (r'^library/(?P<req_name>.*)/$', 'jasonkotenko.library.views.show_library'),
-    (r'^gallery/(?P<req_name>.*)/$', 'jasonkotenko.photos.views.gallery'),
-    (r'^photos/$', 'jasonkotenko.photos.views.gallery_list'),
+    url(r'^$', 'jasonkotenko.posts.views.latest', name="latest_posts"),
+    url(r'^tinymce/', include('tinymce.urls'), name="tinymce"),
+    url(r'^posts/feed/$', PostFeed(), name="posts_feed"),
+    url(r'^posts/(?P<req_name>.*)/$', 'jasonkotenko.posts.views.post', name="single_post"),
+    url(r'^articles/(?P<req_name>.*)/$', 'jasonkotenko.articles.views.article', name="single_article"),
+    url(r'^library/(?P<req_name>.*)/$', 'jasonkotenko.library.views.show_library', "library"),
+    url(r'^gallery/(?P<req_name>.*)/$', 'jasonkotenko.photos.views.gallery', name="single_photo_gallery"),
+    url(r'^photos/$', 'jasonkotenko.photos.views.gallery_list', name="photo_gallery_list"),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
