@@ -1,22 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transistional.dtd">
+{% extends 'bare_base.html' %}
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
-    <meta name="google-site-verification" content="rTZB2Z4ZIMTzsxfCCapz3ixbLYuqY1jG7qir-N9OWs4" />
-		<meta http-equiv="Content-type" content="text/html" charset=utf-8"/>
-		<title>Jason Kotenko</title>
-		
+{% block bare_head %}		
 		<link rel="stylesheet" type="text/css" media="all" href="/media/css/reset.css" />
         <link rel="stylesheet" type="text/css" media="all" href="/media/css/text.css" />
         <link rel="stylesheet" type="text/css" media="all" href="/media/css/960.css" />
         <link rel="stylesheet" type="text/css" media="all" href="/media/css/base.css" />
         <link rel="alternate" type="application/atom+xml" href="/posts/feed/" title="Blog">
-        {% block header %}{% endblock %}
+        {% block header %}{% endblock header %}
+{% endblock bare_head %}
 
-	</head>
-	
-	<body>
+
+{% block bare_body %}	
 	    <div class="container_16">
 	  
 	    <div class="grid_16" id="top_spacer"></div>
@@ -46,26 +40,4 @@
 		</div>
 		
 		</div>
-	<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-4726746-3");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-<!-- Piwik --> 
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://jasonkotenko.com/stats/" : "http://jasonkotenko.com/stats/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://jasonkotenko.com/stats/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Tag -->
-	</body>
-</html>
+{% endblock bare_body %}
