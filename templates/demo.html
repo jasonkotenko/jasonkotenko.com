@@ -1,0 +1,14 @@
+{% extends 'bare_base.html' %}
+
+{% block bare_head %}
+		<link rel="stylesheet" type="text/css" media="all" href="/media/css/demo.css" />
+{% endblock bare_head %}
+
+{% block bare_body %}
+<div id="demo_top_bar">
+    <div id="demo_image"><a href="/"><img src="/media/images/mountain_bw_240w.png"></a></div>
+    <div id="demo_menu">{% include 'menu.html' %}</div>
+</div>
+{% block demo %}{% endblock demo %}
+
+{% endblock bare_body %}

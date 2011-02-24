@@ -1,0 +1,22 @@
+#demo_top_bar {
+    width: 1000px;
+}
+
+#demo_image {
+    float: left;
+}
+
+#demo_menu ul li {
+    display: inline;
+    list-style-type: none;
+    padding-left: 40px;
+}
+
+#demo_menu ul#menu {
+    padding-left: 0px;
+}
+
+#demo_menu {
+    float: right;
+    padding-top: 30px;
+}

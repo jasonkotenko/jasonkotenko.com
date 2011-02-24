@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
 from jasonkotenko.posts.models import Post
 from jasonkotenko.feeds import PostFeed
+from django.views.generic.simple import direct_to_template
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -13,6 +14,7 @@ urlpatterns = patterns('',
     #(r'^$', 'django.views.generic.list_detail.object_list', queryset),
     url(r'^$', 'jasonkotenko.posts.views.latest', name="latest_posts"),
     url(r'^tinymce/', include('tinymce.urls'), name="tinymce"),
+    url(r'^demo/', direct_to_template, {'template': 'demo.html'}),
     url(r'^posts/feed/$', PostFeed(), name="posts_feed"),
     url(r'^posts/(?P<req_name>.*)/$', 'jasonkotenko.posts.views.post', name="single_post"),
     url(r'^articles/(?P<req_name>.*)/$', 'jasonkotenko.articles.views.article', name="single_article"),
