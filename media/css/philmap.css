@@ -1,0 +1,27 @@
+body {
+              background: #FFF;
+            }
+            
+            #canvas {
+                position: absolute;
+                top: 130px;
+                left: 0px;
+                height: 650px;
+                width: 500px;
+            }
+            #info {
+                position: absolute;
+                top: 280px;
+                left: 600px;
+                width: 400px;
+                height: 500px;
+                color: #AAA;
+                text-align: left;
+            }
+            #paper {
+                height: 650px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 500px;
+            }

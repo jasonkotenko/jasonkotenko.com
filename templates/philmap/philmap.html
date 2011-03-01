@@ -1,0 +1,51 @@
+{% extends 'demo.html' %}
+
+{% block extra_head %}
+    <title>Philippines</title>
+    <script type="text/javascript" src="/media/js/raphael-min.js"></script>
+    <script type="text/javascript" src="/media/js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="/media/css/philmap.css" />  
+{% endblock extra_head %}
+
+{% block demo %}
+    <div id="canvas">
+    <div id="paper"></div>
+    <div id="info"><h2>The Philippines</h2><div id="info-text"></div></div>
+    </div>
+    <script type="text/javascript">
+        var R = Raphael("paper", 500, 650);
+        var attr = {
+            fill: '#444',
+            stroke: '#666',
+            "stroke-width": 1,
+            "stroke-linejoin": "round"
+        };
+    </script>
+    <script type="text/javascript" src="/media/js/philmap.js"></script>
+    <script type="text/javascript">
+        var current = null;
+        for (var state in phil) {
+                phil[state].color = Raphael.getColor();
+                (function (st, state) {
+                    st[0].style.cursor = "pointer";
+                    st[0].onmouseover = function () {
+                        current && phil[current].animate({fill: "#444", stroke: "#666"}, 500);
+                        // && (document.getElementById(current).style.display = "");
+                        st.animate({fill: st.color, stroke: "#ccc", scale: "1.5", opacity: .95}, 500, "backOut");
+                        st.toFront();
+                        R.safari();
+                        $("#info h2").text(phil[state].name.replace(/_/g," "));
+                        current = state;
+                    };
+                    st[0].onmouseout = function () {
+                        st.animate({fill: "#444", stroke: "#666", scale: "1", opacity: 1}, 500, "backIn");
+                        st.toFront();
+                        R.safari();
+                    };
+                    if (state == "nsw") {
+                        st[0].onmouseover();
+                    }
+                })(phil[state], state);
+            };
+    </script>
+{% endblock demo %}
