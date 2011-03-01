@@ -3,6 +3,8 @@
     <link rel="stylesheet" type="text/css" media="all" href="media/css/post.css" />
 {% endblock %}
 
+{% block title %}Blog{% endblock title %}
+
 {% block content %}
 {% for object in post_list %}
 	{% include 'posts/_post.html' %}

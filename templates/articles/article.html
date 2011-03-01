@@ -3,12 +3,10 @@
     <link rel="stylesheet" type="text/css" media="all" href="media/css/post.css" />
 {% endblock %}
 
+{% block title %}<a href="/articles/{{ article.slug }}">{{ article.name }}</a>{% endblock title %}
+
 {% block content %}
-<div class="post">
-<h3 id="post_title"><a href="/articles/{{ article.slug }}">{{ article.name }}</a></h3>
-
-   
+<div class="post">   
     {{ article.content|safe }}
-
 </div>
 {% endblock %}

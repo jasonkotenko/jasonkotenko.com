@@ -2,8 +2,9 @@
 
 {% load util_tags %}
 
-{% block content %}
+{% block title %}Photo Galleries{% endblock title %}
 
+{% block content %}
 <div id="galleries">
 <ul id="gallery_list">
 {% for gallery in galleries %}
@@ -14,6 +15,4 @@
 {% endfor %}
 </ul>
 </div>
-
-
 {% endblock %}
