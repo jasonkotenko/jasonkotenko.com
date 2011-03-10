@@ -1,5 +1,13 @@
 from django.contrib import admin
 from models import Gallery, Photo
 
-admin.site.register(Gallery)
+class PhotoInline(admin.TabularInline):
+  model = Photo
+
+class GalleryAdmin(admin.ModelAdmin):
+  inlines = [
+    PhotoInline,
+  ]
+  
+admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Photo)
