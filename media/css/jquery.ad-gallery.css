@@ -1,5 +1,9 @@
+#gallery {
+    margin-left: 50px;
+}
+
 .ad-gallery {
-  width: 600px;
+  width: 900px;
 }
 .ad-gallery, .ad-gallery * {
   margin: 0;
@@ -7,7 +11,7 @@
 }
   .ad-gallery .ad-image-wrapper {
     width: 100%;
-    height: 400px;
+    height: 550px;
     margin-bottom: 10px;
     position: relative;
     overflow: hidden;

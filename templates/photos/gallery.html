@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'demo.html' %}
 
-{% block header %}
+{% block extra_head %}
 <link rel="stylesheet" type="text/css" media="all" href="/media/css/jquery.ad-gallery.css" />
 <script type="text/javascript" src="/media/js/jquery.js"></script>
 <script type="text/javascript" src="/media/js/jquery.ad-gallery.pack.js"></script>
@@ -18,7 +18,7 @@
 
 {% block title %}{{ gallery.name }}{% endblock title %}
 
-{% block content %}
+{% block demo %}
 <div id="container">
 <div id="gallery" class="ad-gallery">
   <div class="ad-image-wrapper"> 
