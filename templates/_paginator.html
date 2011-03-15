@@ -1,0 +1,19 @@
+{% if object.object_list %}
+
+<div class="pagination">
+	{% if object.has_previous %}
+		<a href="?page={{ object.previous_page_number }}" class="prev">&laquo; Previous</a>
+	{% endif %}
+
+	<span class="current">
+		Page {{ object.number }} of {{ object.paginator.num_pages }}
+	</span>
+
+	{% if object.has_next %}
+		<a href="?page={{ object.next_page_number }}" class="next">Next &raquo;</a>
+	{% endif %}
+
+	<div class="clr"></div>
+</div>
+
+{% endif %}

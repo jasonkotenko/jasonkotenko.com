@@ -4,6 +4,11 @@ from thatgaljam import settings
 import re, os, Image, random, posixpath
 register = template.Library()  
 
+
+@register.inclusion_tag('_paginator.html')
+def paginator(object):
+    return {'object': object}
+
 @register.filter("truncate_chars")  
 def truncate_chars(value, max_length):  
    if len(value) <= max_length:  

@@ -3,12 +3,15 @@
     <link rel="stylesheet" type="text/css" media="all" href="media/css/post.css" />
 {% endblock %}
 
+{% load util_tags %}
+
 {% block title %}Blog{% endblock title %}
 
 {% block content %}
-{% for object in post_list %}
+{% for object in post_list.object_list %}
 	{% include 'posts/_post.html' %}
 	<a href="/posts/{{ object.slug }}">Comments, etc.</a>
   <hr/>
 {% endfor %}
+{% paginator post_list %}
 {% endblock %}
