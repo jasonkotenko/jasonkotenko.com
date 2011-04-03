@@ -12,3 +12,13 @@ def post(request, req_name):
     p = get_object_or_404(Post, slug=req_name)
     return render_to_response('posts/post_detail.html', \
                                     {'object': p})                              
+
+from tagging.models import Tag, TaggedItem
+
+def tagged_posts(request, tag_name):
+    tag = get_object_or_404(Tag, name=tag_name)
+    entries = paginate(request, sorted(TaggedItem.objects.get_by_model(Post, tag), key=Post.date, reverse=True))
+    return render_to_response('posts/post_list.html', \
+                                {'post_list': entries, 'tag':tag_name})
+    
+

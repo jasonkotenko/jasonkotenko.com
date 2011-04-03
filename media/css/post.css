@@ -9,3 +9,30 @@
 div.post {
     margin-bottom: 10px;
 }
+
+p.code, pre.code{
+    background: #EEE;
+    font-family: monospace;
+    border: 1px solid #DDD;
+}
+
+span.code {
+    font-family: monospace;
+}
+
+#post_tags ul {
+    list-style-type: none;
+}
+
+#post_tags li { 
+    float: left;
+    padding: 4px 12px;
+    border: 1px solid #BBB;
+    background: #CCC;
+    margin: 0px 5px 0 0;
+    font-weight: bold;
+}
+
+#post_tags a {
+    text-decoration: none;
+}
