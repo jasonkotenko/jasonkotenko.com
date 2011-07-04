@@ -2,6 +2,18 @@
 {% block header %}
     <link rel="stylesheet" type="text/css" media="all" href="/media/css/post.css" />
 {% endblock %}
+
+{% block sidebar_extra %}
+<div id="similar"><strong>Similar Posts:</strong>
+<ul>
+{% for list in object.get_similar %}
+	{% for similar in list %}
+		<a href="/posts/{{ similar.slug }}"><li>{{ similar.title }}</li></a>
+	{% endfor %}
+{% endfor %}
+</ul></div>
+{% endblock sidebar_extra %}
+
 {% block content %}
 
 {% include 'posts/_post.html' %}

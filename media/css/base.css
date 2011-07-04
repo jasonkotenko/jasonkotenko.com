@@ -11,7 +11,7 @@ div#top_spacer {
 }
 
 
-ul#menu {
+ul#menu, #similar ul {
     list-style-type: none;
     padding-left: 0px;
     text-align: center;

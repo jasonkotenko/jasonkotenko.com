@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from tagging.fields import TagField
-from tagging.models import Tag
+from tagging.models import Tag, TaggedItem
+from random import sample
 
 class Post(models.Model):
   author = models.ForeignKey(User, related_name='posts')
@@ -14,6 +15,11 @@ class Post(models.Model):
   
   def get_tags(self):
     return Tag.objects.get_for_object(self)
+    
+  def get_similar(self):
+    similar = map(lambda t: TaggedItem.objects.get_by_model(Post,t), 
+                      self.get_tags())
+    return similar
 
   def date(self):
     return self.pub_date

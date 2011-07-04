@@ -14,6 +14,7 @@ p.code, pre.code{
     background: #EEE;
     font-family: monospace;
     border: 1px solid #DDD;
+    white-space: pre;
 }
 
 span.code {
@@ -35,4 +36,21 @@ span.code {
 
 #post_tags a {
     text-decoration: none;
+}
+
+#similar strong {
+    margin-left: 80px;
+}
+
+#similar li {
+    margin-top: 10px;
+    border-top: 1px solid #999;
+}
+
+#similar a {
+    text-decoration: none;
+}
+
+#similar a:hover {
+    text-decoration: underline;
 }
