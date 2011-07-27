@@ -1,6 +1,6 @@
 from django.utils.encoding import force_unicode
 from django import template
-from thatgaljam import settings
+from jasonkotenko import settings
 import re, os, Image, random, posixpath
 register = template.Library()  
 
