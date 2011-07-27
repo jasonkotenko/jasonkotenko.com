@@ -17,9 +17,10 @@ class Post(models.Model):
     return Tag.objects.get_for_object(self)
     
   def get_similar(self):
-    similar = map(lambda t: TaggedItem.objects.get_by_model(Post,t), 
-                      self.get_tags())
-    return similar
+    #similar = map(lambda t: TaggedItem.objects.get_by_model(Post,t), 
+    #                  self.get_tags())
+    #return similar
+    return TaggedItem.objects.get_related(self, Post)    
 
   def date(self):
     return self.pub_date

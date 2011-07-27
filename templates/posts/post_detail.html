@@ -4,12 +4,10 @@
 {% endblock %}
 
 {% block sidebar_extra %}
-<div id="similar"><strong>Similar Posts:</strong>
+<div id="similar"><strong>Similar Posts by Tag:</strong>
 <ul>
-{% for list in object.get_similar %}
-	{% for similar in list %}
+{% for similar in object.get_similar %}
 		<a href="/posts/{{ similar.slug }}"><li>{{ similar.title }}</li></a>
-	{% endfor %}
 {% endfor %}
 </ul></div>
 {% endblock sidebar_extra %}
