@@ -11,7 +11,15 @@ def latest(request):
 def post(request, req_name):
     p = get_object_or_404(Post, slug=req_name)
     return render_to_response('posts/post_detail.html', \
-                                    {'object': p})                              
+                                    {'object': p})
+                                    
+def search(request):
+    query = request.GET['query']
+    results = Post.objects.raw("select id, title, slug, ts_headline(body, query, 'MinWords=45, MaxWords=60') as excerpt, rank from (select id, title, slug, body, query, ts_rank_cd(tsv, query, 4) as rank from posts_post, plainto_tsquery('" + query + "') query where tsv @@ query order by rank desc limit 10) as foo;")
+    count = len(list(results)) #length doesn't work on RawQuerySet
+    return render_to_response('posts/search_results.html', {'results': results, \
+                                                            'query': query, \
+                                                            'count': count})
 
 from tagging.models import Tag, TaggedItem
 

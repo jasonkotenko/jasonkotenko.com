@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block header %}
+    <link rel="stylesheet" type="text/css" media="all" href="/media/css/post.css" />
+{% endblock %}
+
+{% load util_tags %}
+
+{% block title %}
+    Search Results for "{{ query }}"
+{% endblock title %}
+
+{% block content %}
+{% if count > 0 %}
+{% for post in results %}
+<p>
+    <strong><a href="/posts/{{ post.slug }}">{{ post.title }}</a></strong><br/>
+    ...{{ post.excerpt|safe }}...<br/>
+    {{ post.rank|percentage }}
+</p>
+{% endfor %}
+{% else %}
+<strong>Sorry, no results for "{{ query }}"</strong>
+{% endif %}
+{% endblock content %}

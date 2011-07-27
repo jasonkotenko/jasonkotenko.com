@@ -4,6 +4,9 @@ from jasonkotenko import settings
 import re, os, Image, random, posixpath
 register = template.Library()  
 
+@register.filter("percentage")
+def percentage(value):
+    return "%.2f" % (value * 100) + "%"
 
 @register.inclusion_tag('_paginator.html')
 def paginator(object):
