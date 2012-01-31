@@ -5,3 +5,4 @@ settings.py
 django
 DEADJOE
 media/temp
+*.swp
