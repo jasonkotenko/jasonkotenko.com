@@ -13,7 +13,6 @@ urlpatterns = patterns('',
     # Example:
     #(r'^$', 'django.views.generic.list_detail.object_list', queryset),
     url(r'^$', 'jasonkotenko.posts.views.latest', name="latest_posts"),
-    url(r'^tinymce/', include('tinymce.urls'), name="tinymce"),
     url(r'^demo/$', direct_to_template, {'template': 'demo.html'}),
     url(r'^demo/philippines-map/$', direct_to_template, {'template': 'philmap/philmap.html'}),
     url(r'^posts/feed/$', PostFeed(), name="posts_feed"),
