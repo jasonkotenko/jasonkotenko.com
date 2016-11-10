@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block header %}
     <link rel="stylesheet" type="text/css" media="all" href="/media/css/post.css" />
-    {% block title %}{{object.title}}{% endblock title %}
 
 {% endblock %}
+
+{% block title %}{{object.title}}{% endblock title %}
 
 {% block sidebar_extra %}
 <div id="similar"><strong>Similar Posts by Tag:</strong>
